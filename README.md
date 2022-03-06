@@ -2,7 +2,7 @@ Creates single IAM role which can be assumed by trusted resources.
 
 ```tf
 module "role_admin" {
-  source      = "git@github.com:moajo/terraform-aws-assumable-role.git?ref=v1.0.0"
+  source      = "git@github.com:moajo/terraform-aws-assumable-role.git?ref=v2.0.0"
   rolename    = "admin"
   policy_arns = ["arn:aws:iam::aws:policy/AdministratorAccess"]
 
