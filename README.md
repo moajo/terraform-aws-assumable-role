@@ -2,7 +2,7 @@ Creates single IAM role which can be assumed by trusted resources.
 
 ```tf
 module "role_admin" {
-  source      = "git@github.com:moajo/terraform-aws-assumable-role.git?ref=v2.0.0"
+  source      = "git@github.com:moajo/terraform-aws-assumable-role.git?ref=v2.2.0"
   rolename    = "admin"
   policy_arns = ["arn:aws:iam::aws:policy/AdministratorAccess"]
 
@@ -40,11 +40,12 @@ No modules.
 
 ## Inputs
 
-| Name                                                                                       | Description                                 | Type           | Default | Required |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------- | -------------- | ------- | :------: |
-| <a name="input_delegate_principals"></a> [delegate_principals](#input_delegate_principals) | List of principals to allow for AssumeRole. | `list(string)` | n/a     |   yes    |
-| <a name="input_policy_arns"></a> [policy_arns](#input_policy_arns)                         | List of policy ARNs to attach to the role.  | `list(string)` | n/a     |   yes    |
-| <a name="input_rolename"></a> [rolename](#input_rolename)                                  | The name of the role.                       | `string`       | n/a     |   yes    |
+| Name                                                                                          | Description                                             | Type           | Default | Required |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------- | ------- | :------: |
+| <a name="input_delegate_principals"></a> [delegate_principals](#input_delegate_principals)    | List of principals to allow for AssumeRole.             | `list(string)` | n/a     |   yes    |
+| <a name="input_max_session_duration"></a> [max_session_duration](#input_max_session_duration) | The maximum session duration (in seconds) for the role. | `number`       | `3600`  |    no    |
+| <a name="input_policy_arns"></a> [policy_arns](#input_policy_arns)                            | List of policy ARNs to attach to the role.              | `list(string)` | n/a     |   yes    |
+| <a name="input_rolename"></a> [rolename](#input_rolename)                                     | The name of the role.                                   | `string`       | n/a     |   yes    |
 
 ## Outputs
 

@@ -12,3 +12,9 @@ variable "delegate_principals" {
   type        = list(string)
   description = "List of principals to allow for AssumeRole."
 }
+
+variable "max_session_duration" {
+  type        = number
+  description = "The maximum session duration (in seconds) for the role."
+  default     = 3600
+}
